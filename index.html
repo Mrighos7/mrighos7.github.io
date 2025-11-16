@@ -1,1 +1,62 @@
-<h1>my hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Report Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #sidebar {
+            width: 250px;
+            background-color: #f5f5f5;
+            height: 100vh;
+            overflow-y: auto;
+            float: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        a.report-link {
+            display: block;
+            margin-bottom: 10px;
+            color: #E8503A;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        a.report-link:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Reports</h2>
+        <!-- List of report links -->
+        <a class="report-link" onclick="openReport('https://teamsite.maerskgroup.com/:x:/r/teams/KBSPBI/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B5b554a26-a298-41b2-ab05-049c2f3f0fdf%7D&wdOrigin=TEAMS-WEB.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1763273170082&web=1')">Report 1</a>
+        <a class="report-link" onclick="openReport('https://teamsite.maerskgroup.com/:x:/r/teams/KBSPBI/_layouts/15/Doc2.aspx?action=edit&sourcedoc=%7B91ae6b7a-6070-493c-8301-1296090d5fb7%7D&wdOrigin=TEAMS-WEB.teamsSdk_ns.rwc&wdExp=TEAMS-TREATMENT&wdhostclicktime=1763286886203&web=1')">Report 2</a>
+        <!-- Add more reports here -->
+    </div>
+
+    <div id="content">
+        <h2>Report Viewer</h2>
+        <iframe id="reportFrame" src=""></iframe>
+    </div>
+
+    <script>
+        function openReport(url) {
+            document.getElementById('reportFrame').src = url;
+        }
+    </script>
+</body>
+</html>
